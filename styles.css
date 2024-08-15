@@ -1,0 +1,231 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcf3cf ;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #689f38;
+    color: #dcedc8 ;
+    padding: 1rem;  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+
+header img {
+    width: 90px;
+    margin-right: 1rem;
+}
+
+
+header h1 {
+    font-family: 'Garamond Bold', serif;
+    margin: 0;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+nav li {
+    margin: 0 1rem;
+}
+
+
+nav a {
+    color: #1b5e20 
+    ;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+
+nav a:hover {
+    background-color: #ffffff;
+}
+
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+main {
+    padding: 2rem;
+    padding-top: 120px; /* Ajustar según el tamaño del header */
+    padding-bottom: 4rem; /* Espacio adicional para el footer */
+}
+
+
+section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #f9fbe7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+section .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+section h2 {
+    font-family: 'Garamond Italic', serif;
+    color: #1b5e20;
+}
+
+
+section p {
+    color: #004d40;
+    font-size: 1rem; /* Tamaño por defecto para pantallas grandes */
+}
+
+
+footer {
+    background-color: #689f38;
+    color: #dcedc8;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+}
+
+
+#folleto a {
+    display: inline-block;
+    padding: 0.7rem;
+    background-color: #388e3c;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+
+#folleto a:hover {
+    background-color: #2c6e24;
+}
+
+
+#back-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: #1CC41F;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: none; /* Ocultar por defecto */
+}
+
+
+#back-to-top:hover {
+    background-color: #beb30d;
+}
+
+
+/* Estilos para dispositivos móviles y tablets */
+@media (max-width: 768px)
+
+{
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        display: none; /* Ocultar nav por defecto en móviles */
+        width: 100%;
+        background-color: #388e3c;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        transform: translateY(-100%);
+    }
+    nav.nav-visible {
+        display: flex; /* Mostrar nav cuando se active */
+        transform: translateY(0);
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    nav li {
+        margin: 0;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+    section p {
+        font-size: 1.2rem; /* Tamaño de fuente más grande para móviles */
+    }
+    iframe {
+        width: 100%;
+        height: 500px; /* Ajustar altura del iframe en móviles */
+    }
+    /* Solucionar el problema de la primera sección en dispositivos móviles */
+    section#inicio {
+        padding-top: 120px; /* Ajustar el padding para que no se oculte bajo el header */
+    }
+
+
+    /* Ocultar el botón de "volver arriba" en dispositivos móviles */
+    #back-to-top {
+        display: none !important; /* Asegurar que no aparezca en móviles */
+    }
+}
+
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+    #back-to-top {
+        display: flex; /* Mostrar en pantallas grandes */
+    }
+}
